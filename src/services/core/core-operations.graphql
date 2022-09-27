@@ -1,0 +1,20 @@
+# https://www.the-guild.dev/blog/typed-document-node
+
+fragment CodeFragment on Code {
+  value
+  text
+}
+fragment NameFragment on Name {
+  family
+  given
+  prefix
+  suffix
+  use
+}
+fragment PronounsFragment on Pronouns {
+  subject
+  object
+  possessive
+  self
+  text
+}

@@ -1,0 +1,11 @@
+{
+  "name": "fhir",
+  "version": "1.0.0",
+  "description": "user-service",
+  "dependencies": {
+    "bcrypt": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0"
+  }
+}

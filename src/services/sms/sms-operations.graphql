@@ -1,0 +1,5 @@
+mutation SendSms($params: SmsInput!) {
+  sendSms(params: $params) {
+    error
+  }
+}

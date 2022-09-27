@@ -1,0 +1,76 @@
+# https://www.the-guild.dev/blog/typed-document-node
+
+fragment PatientBasicFragment on Patient {
+  _id
+  name {
+    ...NameFragment
+  }
+  telecom {
+    value
+    use
+    rank
+  }
+  gender {
+    identity {
+      value
+      context
+    }
+    sexForClinicalUse {
+      value
+      text
+    }
+    recordedSexOrGender {
+      value
+      text
+    }
+    pronouns {
+      ...PronounsFragment
+    }
+  }
+  birthDate
+  deceased {
+    deceasedBoolean
+  }
+  maritalStatus {
+    value
+    text
+  }
+  address {
+    use
+    type
+    line
+    city
+    province
+    country
+    postalCode
+  }
+  photo {
+    _id
+  }
+  careTeam {
+    participants {
+      role
+      practitioner {
+        name {
+          ...NameFragment
+        }
+        professionalId
+        qualifications {
+          code {
+            ...CodeFragment
+          }
+        }
+      }
+    }
+  }
+  languages {
+    code
+    preferred
+  }
+}
+
+query RecentPatients {
+  findRecentPatients {
+    ...PatientBasicFragment
+  }
+}

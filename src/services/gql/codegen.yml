@@ -1,0 +1,19 @@
+# https://the-guild.dev/blog/better-type-safety-for-resolvers-with-graphql-codegen
+# https://www.graphql-code-generator.com/plugins/typescript-resolvers
+# To execute, run: npx graphql-codegen
+
+schema: http://localhost:8888/api/gql
+documents: "../**/*.graphql"
+config:
+  contextType: ./context#Context
+scalars:
+  DateTime: Date
+generates:
+  ./gql-types.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+      - typescript-operations
+      - typed-document-node
+    config:
+      maybeValue: T | undefined

@@ -1,0 +1,22 @@
+[build]
+  functions = "src/functions" 
+  publish = ".next"
+
+[[redirects]]
+  from = "/api/.well-known/openid-configuration"
+  to = "/.netlify/functions/openid-configuration"
+  status = 200
+
+[[redirects]]
+  from = "/api/.well-known/smart-configuration"
+  to = "/.netlify/functions/smart-configuration"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[functions]
+    node_bundler = "esbuild"
+    external_node_modules = ["express", "keyv"]

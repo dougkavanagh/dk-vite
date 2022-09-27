@@ -1,0 +1,23 @@
+# https://www.the-guild.dev/blog/typed-document-node
+
+query CurrentUser {
+  currentUser {
+    email
+    profile {
+      displayName
+    }
+    roles {
+      admin
+    }
+  }
+}
+
+mutation Login($creds: LoginInput!) {
+  login(creds: $creds) {
+    success
+  }
+}
+
+mutation Logout {
+  logout
+}
