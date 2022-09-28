@@ -2,6 +2,7 @@ import { gql } from "graphql-tag";
 
 export default gql`
   type Practitioner {
+    _id: ID
     name: Name!
     gender: GenderInfo
     birthDate: String
@@ -10,7 +11,7 @@ export default gql`
     qualifications: [Qualification]
   }
   input PractitionerInput {
-    id: ID
+    _id: ID
     name: NameInput!
     gender: GenderInfoInput
     birthDate: String

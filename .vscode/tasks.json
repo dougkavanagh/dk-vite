@@ -1,0 +1,80 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"options": {
+				"cwd": "src/services/gql"
+			},
+			"label": "GraphQL Code Generator",
+			"type": "shell",
+			"command": "npx graphql-codegen",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Kill Dead Netlify Server on Port 3000",
+			"type": "shell",
+			"command": "lsof -i TCP:3000 | grep LISTEN | awk '{print $2}' | xargs kill -9",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"options": {
+				"cwd": "."
+			},
+			"label": "Netlify Build",
+			"type": "shell",
+			"command": "netlify build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"options": {
+				"cwd": "."
+			},
+			"label": "Next Build",
+			"type": "shell",
+			"command": "npx next build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"options": {
+				"cwd": "."
+			},
+			"label": "Update Netlify",
+			"type": "shell",
+			"command": "npm install -g netlify-cli",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"options": {
+				"cwd": "."
+			},
+			"label": "Run npm install on all packages",
+			"type": "shell",
+			"command": "node scripts/installer.mjs",
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		}
+	]
+}

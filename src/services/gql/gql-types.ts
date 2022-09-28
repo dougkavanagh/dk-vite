@@ -635,10 +635,10 @@ export type Practitioner = {
 };
 
 export type PractitionerInput = {
+  _id?: InputMaybe<Scalars['ID']>;
   billingId?: InputMaybe<Scalars['String']>;
   birthDate?: InputMaybe<Scalars['String']>;
   gender?: InputMaybe<GenderInfoInput>;
-  id?: InputMaybe<Scalars['ID']>;
   name: NameInput;
   professionalId?: InputMaybe<Scalars['String']>;
   qualifications?: InputMaybe<Array<QualificationInput>>;

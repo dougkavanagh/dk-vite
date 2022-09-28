@@ -24,6 +24,12 @@ export async function save(context: SessionContext, model: Practitioner) {
     model
   );
 }
+export async function remove(context: SessionContext, id: string) {
+  checkIfSite(context);
+  return await PractitionerModel.remove(
+    { _id: id, siteId: checkIfSite(context)}
+  );
+}
 export async function findById(
   context: SessionContext,
   id: string
@@ -46,6 +52,7 @@ export const PractitionerService = {
     await PractitionerModel.syncIndexes();
   },
   create,
+  remove,
   save,
   findById,
   findBySite,
